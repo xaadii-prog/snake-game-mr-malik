@@ -1578,3 +1578,292 @@ button {
         font-size: 15px;
     }
 }
+/* =========================================================
+   THEME PANEL
+========================================================= */
+
+.theme-panel {
+    position: absolute;
+    top: 78px;
+    right: 18px;
+    z-index: 100;
+
+    width: 310px;
+    padding: 16px;
+
+    display: none;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(18, 27, 43, 0.98),
+            rgba(7, 12, 22, 0.99)
+        );
+
+    border: 1px solid #334155;
+    border-radius: 16px;
+
+    box-shadow:
+        0 20px 55px rgba(0, 0, 0, 0.55),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+
+/* PANEL HEADER */
+
+.theme-panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 13px;
+    padding-bottom: 12px;
+
+    border-bottom: 1px solid #243247;
+}
+
+.theme-panel-eyebrow {
+    display: block;
+
+    color: #3b82f6;
+    font-size: 8px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+}
+
+.theme-panel-header h3 {
+    margin-top: 3px;
+
+    color: #e2e8f0;
+    font-size: 15px;
+    font-weight: 900;
+}
+
+
+/* CLOSE BUTTON */
+
+.close-theme-btn {
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #334155;
+    border-radius: 9px;
+
+    background: #111a2a;
+    color: #94a3b8;
+
+    font-size: 14px;
+    font-weight: 900;
+
+    transition:
+        transform 0.15s ease,
+        background 0.15s ease,
+        color 0.15s ease;
+}
+
+.close-theme-btn:hover {
+    background: #1e293b;
+    color: #ffffff;
+    transform: scale(1.05);
+}
+
+
+/* THEME OPTIONS */
+
+.theme-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+
+/* THEME BUTTON */
+
+.theme-option {
+    min-height: 62px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+    padding: 9px;
+
+    border: 1px solid #29374c;
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #172235,
+            #111a2a
+        );
+
+    color: #cbd5e1;
+
+    text-align: left;
+
+    transition:
+        transform 0.18s ease,
+        background 0.18s ease,
+        border-color 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+.theme-option:hover {
+    transform: translateY(-2px);
+
+    background:
+        linear-gradient(
+            145deg,
+            #223149,
+            #172235
+        );
+
+    border-color: #475569;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 7px 20px rgba(0, 0, 0, 0.25);
+}
+
+.theme-option:active {
+    transform: scale(0.96);
+}
+
+
+/* THEME ICON */
+
+.theme-option-icon {
+    width: 34px;
+    height: 34px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, 0.06);
+
+    font-size: 18px;
+}
+
+
+/* THEME TEXT */
+
+.theme-option-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.theme-option-info strong {
+    color: #f1f5f9;
+
+    font-size: 11px;
+    font-weight: 900;
+}
+
+.theme-option-info small {
+    margin-top: 3px;
+
+    color: #64748b;
+
+    font-size: 8px;
+    font-weight: 700;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .theme-panel {
+        position: fixed;
+
+        top: 115px;
+        left: 50%;
+
+        right: auto;
+
+        width: calc(100% - 22px);
+        max-width: 360px;
+
+        transform: translateX(-50%);
+    }
+
+    .theme-options {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+@media (max-width: 400px) {
+
+    .theme-panel {
+        top: 105px;
+        padding: 13px;
+    }
+
+    .theme-option {
+        min-height: 57px;
+        padding: 7px;
+    }
+
+    .theme-option-icon {
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+    }
+
+    .theme-option-info strong {
+        font-size: 10px;
+    }
+
+    .theme-option-info small {
+        font-size: 7px;
+    }
+}
+
+/* =========================================================
+   ACTIVE THEME OPTION
+========================================================= */
+
+.theme-option.active {
+    border-color: #3b82f6;
+
+    background:
+        linear-gradient(
+            145deg,
+            #1e3a5f,
+            #14253b
+        );
+
+    box-shadow:
+        0 0 0 1px rgba(59, 130, 246, 0.25),
+        0 8px 24px rgba(0, 0, 0, 0.28);
+}
+
+.theme-option.active .theme-option-icon {
+    background: rgba(59, 130, 246, 0.18);
+
+    box-shadow:
+        0 0 14px rgba(59, 130, 246, 0.18);
+}
+
+.theme-option.active .theme-option-info strong {
+    color: #ffffff;
+}
+
+.theme-option.active .theme-option-info small {
+    color: #60a5fa;
+}

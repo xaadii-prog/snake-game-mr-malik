@@ -27,6 +27,10 @@ const restartBtn = document.getElementById("restartBtn");
 const soundBtn = document.getElementById("soundBtn");
 const bgMusic = document.getElementById("bgMusic");
 
+const themeBtn = document.getElementById("themeBtn");
+const themePanel = document.getElementById("themePanel");
+const closeThemeBtn = document.getElementById("closeThemeBtn");
+
 
 /* =========================
    GAME SETTINGS
@@ -690,68 +694,119 @@ let bonusMessageTimer = null;
 
 
 /* =========================
-   THEMES
+   PREMIUM THEMES v2.0
 ========================= */
 
 const themes = [
 
     {
+        id: "forest",
         name: "Emerald Forest",
-        bg: "#081c13",
-        grid: "#123a27",
+
+        bg: "#06140d",
+        grid: "#103522",
+
         snake: "#22c55e",
-        head: "#b7ffca",
+        head: "#c7f9d4",
+
         food: "#ff3157",
+
         sideWall: "#047857",
         middleWall: "#34d399"
     },
 
+
     {
+        id: "ocean",
         name: "Ocean Storm",
-        bg: "#061827",
-        grid: "#0d3550",
+
+        bg: "#04131f",
+        grid: "#0b3048",
+
         snake: "#06b6d4",
-        head: "#b8f5ff",
-        food: "#ff4f7b",
+        head: "#c5f7ff",
+
+        food: "#ff477e",
+
         sideWall: "#075985",
         middleWall: "#22d3ee"
     },
 
+
     {
+        id: "space",
         name: "Purple Galaxy",
-        bg: "#180b29",
-        grid: "#34204d",
+
+        bg: "#10051d",
+        grid: "#2b1742",
+
         snake: "#a855f7",
-        head: "#eed7ff",
+        head: "#f0dcff",
+
         food: "#fb4775",
+
         sideWall: "#6b21a8",
         middleWall: "#d946ef"
     },
 
+
     {
+        id: "volcano",
         name: "Crimson Arena",
-        bg: "#27080d",
-        grid: "#50151c",
+
+        bg: "#1c0509",
+        grid: "#46121a",
+
         snake: "#f43f5e",
-        head: "#ffd0d8",
+        head: "#ffd4dc",
+
         food: "#facc15",
+
         sideWall: "#991b1b",
         middleWall: "#fb7185"
     },
 
+
     {
-        name: "Golden Fire",
-        bg: "#241703",
-        grid: "#493208",
-        snake: "#f59e0b",
-        head: "#fff0a8",
-        food: "#22d3ee",
-        sideWall: "#b45309",
-        middleWall: "#fbbf24"
+        id: "frozen",
+        name: "Frozen",
+
+        bg: "#061522",
+        grid: "#12384f",
+
+        snake: "#67e8f9",
+        head: "#e0faff",
+
+        food: "#f472b6",
+
+        sideWall: "#0369a1",
+        middleWall: "#7dd3fc"
     }
 
 ];
 
+/* =========================
+   ACTIVE THEME
+========================= */
+
+const savedTheme =
+    localStorage.getItem("malikSnakeTheme");
+
+let selectedThemeId =
+    themes.some(theme => theme.id === savedTheme)
+        ? savedTheme
+        : "forest";
+
+
+function getCurrentTheme() {
+
+    return (
+        themes.find(
+            theme => theme.id === selectedThemeId
+        ) || themes[0]
+    );
+
+}
 
 /* =========================
    CANVAS RESIZE
@@ -3082,8 +3137,7 @@ function draw() {
     }
 
 
-    const theme =
-        themes[level - 1];
+   const theme = getCurrentTheme();
 
 
     drawBackground(theme);
@@ -3101,7 +3155,6 @@ function draw() {
 /* =========================
    UPDATE UI
 ========================= */
-
 function updateUI() {
 
     scoreEl.textContent =
@@ -3116,11 +3169,15 @@ function updateUI() {
         highScore;
 
 
+    const currentTheme =
+        getCurrentTheme();
+
+
     levelNameEl.textContent =
         "Level " +
         level +
         " • " +
-        themes[level - 1].name;
+        currentTheme.name;
 
 
     modeTextEl.textContent =
@@ -3751,6 +3808,109 @@ document.addEventListener("keydown", function (e) {
     }
 
 });
+
+/* =========================================================
+   THEME PANEL
+========================================================= */
+
+if (themeBtn && themePanel) {
+
+    themeBtn.addEventListener("click", function () {
+
+        if (themePanel.style.display === "block") {
+            themePanel.style.display = "none";
+        } else {
+            themePanel.style.display = "block";
+        }
+
+    });
+
+}
+
+
+if (closeThemeBtn && themePanel) {
+
+    closeThemeBtn.addEventListener("click", function () {
+
+        themePanel.style.display = "none";
+
+    });
+
+}
+
+/* =========================================================
+   THEME SELECTION
+========================================================= */
+
+const themeOptions =
+    document.querySelectorAll(".theme-option");
+
+
+function applySelectedTheme(themeId) {
+
+    const themeExists = themes.some(
+        theme => theme.id === themeId
+    );
+
+    if (!themeExists) {
+        return;
+    }
+
+    selectedThemeId = themeId;
+
+    localStorage.setItem(
+        "malikSnakeTheme",
+        selectedThemeId
+    );
+
+    updateThemeSelection();
+
+    updateUI();
+
+    draw();
+}
+
+
+function updateThemeSelection() {
+
+    themeOptions.forEach(option => {
+
+        const isActive =
+            option.dataset.theme ===
+            selectedThemeId;
+
+        option.classList.toggle(
+            "active",
+            isActive
+        );
+
+    });
+}
+
+
+themeOptions.forEach(option => {
+
+    option.addEventListener(
+        "click",
+        function () {
+
+            const themeId =
+                option.dataset.theme;
+
+            applySelectedTheme(themeId);
+
+            if (themePanel) {
+                themePanel.style.display =
+                    "none";
+            }
+
+        }
+    );
+
+});
+
+
+updateThemeSelection();
 
 
 updateDifficultyButtons();
