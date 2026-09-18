@@ -1,93 +1,198 @@
 # 🐍 Snake Game — Mr. Malik
 
-A modern take on the classic Snake game, designed with a clean dark interface, responsive controls, progressive levels, and a focused arcade-style experience.
+<p align="center">
+  <strong>A modern, responsive, arcade-style Snake experience built from scratch.</strong>
+</p>
 
-Built from scratch using **HTML5, CSS3, and JavaScript**, with the game rendered directly on an HTML5 Canvas.
+<p align="center">
+  HTML5 · CSS3 · JavaScript · Canvas · Web Audio API · LocalStorage
+</p>
 
 ---
 
-## 🎮 Game Features
+## 🎮 About The Game
 
-### 🧱 Wall Levels
+**Snake Game — Mr. Malik** is a modern interpretation of the classic Snake game, combining traditional arcade gameplay with a dark, responsive interface, progressive levels, multiple game modes, difficulty settings, audio feedback, bonus mechanics, and mobile-friendly controls.
 
-Play through progressive levels where the walls become part of the challenge. Navigate carefully, collect food, increase your score, and reach the target required to advance.
+The project is built entirely from scratch using **HTML5, CSS3, and vanilla JavaScript**, with gameplay rendered through the **HTML5 Canvas API**.
 
-### ♾️ No Walls
+The goal is simple:
 
-Prefer a more relaxed arcade experience?
+> **Collect food. Grow the snake. Increase your score. Survive. Progress.**
 
-In **No Walls** mode, the snake can pass through one side of the board and appear from the opposite side.
+---
 
-### ⚡ Three Difficulty Levels
+# ✨ Highlights
 
-Choose the speed that matches your play style:
+* 🎮 Multiple gameplay modes
+* 🧱 Progressive Wall Levels
+* ♾️ No Walls mode
+* ⚡ Easy, Medium & Hard difficulty
+* 🍎 Food and scoring system
+* ⭐ Timed bonus food
+* 📈 Progressive level system
+* 🏆 Local high-score system
+* 🔊 Background music and sound effects
+* ⏸️ Pause & Resume
+* ↻ Instant Restart
+* ⌨️ Keyboard controls
+* 📱 Swipe controls
+* 🎮 Mobile D-pad controls
+* 🌙 Modern dark interface
+* 🎨 Premium visual experience
+* ⚙️ Optimized production files
+* 📦 Minified project assets
+* 💻 Desktop & mobile support
 
-* **Easy** — Relaxed gameplay
-* **Medium** — Balanced challenge
-* **Hard** — Faster and more demanding gameplay
+---
 
-Difficulty can be changed before starting a new game.
+# 🎯 Game Modes
 
-### 🍎 Food & Scoring
+## 🧱 Wall Levels
 
-Collect regular food to increase your score and grow the snake.
+The main progressive Snake experience.
 
-As the game progresses, reaching the required score allows you to complete the current level and move forward.
+Players must navigate through increasingly challenging levels while avoiding walls, collecting food, growing the snake, and reaching the required score.
 
-### ⭐ Bonus Food
+As progression continues, the gameplay becomes more demanding through increased speed and changing board conditions.
+
+---
+
+## ♾️ No Walls
+
+A more relaxed arcade mode.
+
+Instead of colliding with the edge of the board, the snake wraps around the screen and appears from the opposite side.
+
+This creates a different gameplay style focused on movement, positioning, and score optimization.
+
+---
+
+# ⚡ Difficulty System
+
+Choose your preferred challenge before starting a game.
+
+| Difficulty    | Experience                    |
+| ------------- | ----------------------------- |
+| 🟢 **Easy**   | Relaxed and beginner-friendly |
+| 🟡 **Medium** | Balanced arcade challenge     |
+| 🔴 **Hard**   | Faster and more demanding     |
+
+Difficulty affects gameplay speed and provides different levels of challenge for different play styles.
+
+---
+
+# 🍎 Food & Scoring
+
+Regular food is the primary scoring mechanic.
+
+Collecting food:
+
+* Increases the score
+* Grows the snake
+* Helps meet level objectives
+* Advances gameplay progression
+
+The score system works together with the level progression system to create a continuous arcade-style challenge.
+
+---
+
+# ⭐ Bonus Food
 
 Special bonus food can appear during gameplay.
 
-Bonus food provides an additional scoring opportunity and is available for a limited amount of time, making quick decisions and movement important.
+Bonus food:
 
-### 📈 Level Progression
+* Provides additional scoring opportunities
+* Appears for a limited time
+* Requires quick reactions
+* Adds another strategic element to normal gameplay
 
-The Wall Levels mode contains multiple progressive levels.
+Players must decide whether to take the opportunity while maintaining control of the snake.
 
-Each level increases the challenge through faster gameplay and different board conditions.
+---
 
-The current level, level name, score, and high score are displayed throughout the game.
+# 📈 Level Progression
 
-### 🏆 High Score
+The **Wall Levels** mode is designed around progressive difficulty.
 
-Your highest score is saved locally in the browser using `localStorage`, allowing the game to remember your best performance between sessions.
+Each level can introduce:
 
-### 🔊 Sound & Music
+* Increased gameplay speed
+* Different board conditions
+* New challenges
+* Higher score requirements
 
-The game includes:
+The game interface keeps the player informed through:
 
-* Background music
-* Food collection sounds
-* Bonus food sounds
-* Level completion sounds
-* Game-over sound
-* Sound ON/OFF control
+* Current level
+* Level name
+* Current score
+* High score
+* Bonus status
+* Bonus timer
 
-Music and game sounds are controlled through a single sound button for a simple and consistent experience.
+---
 
-The sound preference is also saved locally.
+# 🏆 High Score System
 
-### ⏸️ Pause & Resume
+The game stores the player's highest score locally using the browser's **LocalStorage API**.
 
-Pause the game whenever you need a break.
+This means the best score can remain available between browser sessions without requiring:
 
-When the game is paused:
+* User accounts
+* Databases
+* External servers
+* Online authentication
+
+---
+
+# 🔊 Audio Experience
+
+The game includes an integrated audio system designed to provide feedback during gameplay.
+
+### Audio includes:
+
+* 🎵 Background music
+* 🍎 Food collection sounds
+* ⭐ Bonus food sounds
+* 📈 Level completion sounds
+* 💥 Game-over sound
+* 🔊 Sound ON/OFF control
+
+The player's sound preference is also stored locally.
+
+---
+
+# ⏸️ Pause & Resume
+
+Players can pause the game whenever necessary.
+
+During pause:
 
 * Gameplay stops
 * Background music pauses
-* The interface changes to a paused state
+* The interface enters a paused state
 
-Resume the game to continue from where you left off.
+The game can then be resumed without restarting the current session.
 
-### ↻ Restart
+---
 
-Restart the current game quickly without refreshing the page.
+# ↻ Restart System
 
-After a game over, the game can also be started again directly.
+The game includes quick restart functionality.
 
-### ⌨️ Keyboard Controls
+Players can:
 
-Desktop players can control the snake using:
+* Restart the current game
+* Restart after game over
+* Begin a new session without refreshing the browser
+
+---
+
+# ⌨️ Keyboard Controls
+
+Desktop players can use either arrow keys or WASD.
 
 | Key     | Action          |
 | ------- | --------------- |
@@ -102,76 +207,68 @@ Desktop players can control the snake using:
 | `Space` | Pause / Resume  |
 | `Enter` | Start / Restart |
 
-### 📱 Mobile Controls
+---
 
-The game is designed to work on mobile devices as well.
+# 📱 Mobile Experience
 
-Mobile players can use:
+The game is designed to work across modern mobile devices as well as desktop screens.
 
-* Swipe gestures on the game board
-* On-screen directional D-pad controls
+### Mobile controls include:
 
-The touch controls are designed specifically for quick directional input while keeping the game interface clean.
+* 👆 Swipe gestures
+* 🎮 On-screen directional D-pad
+* 📱 Responsive game interface
+
+The controls are designed for quick directional input while keeping the gameplay area clear.
 
 ---
 
-## 🎯 Game Modes
+# 🎨 Premium Visual Experience
 
-### Wall Levels
+The V3 development cycle introduces a stronger visual direction for the project.
 
-The classic challenge.
+The interface focuses on:
 
-Walls are part of the level design, and the player must avoid collisions while progressing through increasingly difficult levels.
+* Modern dark aesthetics
+* Clear information hierarchy
+* Arcade-style presentation
+* Responsive UI components
+* Clean game panels
+* Focused gameplay layout
+* Improved visual polish
 
-### No Walls
-
-A different style of Snake gameplay where leaving one side of the board brings the snake back from the opposite side.
-
----
-
-## 🖥️ Interface
-
-The game uses a dark, modern interface with separate sections for:
-
-* Game mode selection
-* Difficulty selection
-* Pause and restart controls
-* Score
-* Current level
-* High score
-* Level name
-* Bonus status
-* Bonus timer
-* Game board
-* Mobile controls
-
-The interface is designed to remain clear while keeping the focus on gameplay.
+The visual system is also structured to support future theme and presentation improvements.
 
 ---
 
-## 🛠️ Built With
+# ⚙️ V3 — Optimization & Production Release
 
-**HTML5**
-Structure and game interface.
+## `v3.0.0`
 
-**CSS3**
-Responsive layout, animations, buttons, panels, dark theme, mobile controls, and visual styling.
+Version 3 represents an important transition toward a cleaner and more deployment-ready version of the project.
 
-**JavaScript**
-Game logic, movement, collision detection, scoring, levels, difficulty, controls, audio, bonus system, and game state management.
+### 🚀 V3 Improvements
 
-**HTML5 Canvas**
-Used to render the Snake game board and gameplay.
+* Production-oriented project cleanup
+* Minified HTML
+* Minified CSS
+* Minified JavaScript
+* Reduced source-file overhead
+* Cleaner production file structure
+* Optimized asset delivery
+* Existing gameplay preserved
+* Existing controls preserved
+* Existing audio system preserved
+* Existing progression system preserved
+* Existing mobile functionality preserved
 
-**Web Audio API**
-Used for game sound effects.
+Instead of keeping separate development and production copies inside the main project, the optimized files are used directly in the project structure.
 
-**LocalStorage**
-Used to save player preferences and high score data locally in the browser.
+This keeps the repository simple and makes the GitHub version closer to the files intended for actual deployment.
 
 ---
 
-## 📂 Project Structure
+# 📦 Production Structure
 
 ```text
 snake-game-mr-malik/
@@ -183,13 +280,91 @@ snake-game-mr-malik/
 └── README.md
 ```
 
+The production release keeps the core project structure lightweight and easy to understand.
+
 ---
 
-## 🚀 Running the Game
+# 🛠️ Technology Stack
 
-No installation or build process is required.
+### HTML5
 
-Download or clone the project, then open:
+Used for:
+
+* Page structure
+* Game interface
+* Controls
+* UI components
+
+### CSS3
+
+Used for:
+
+* Responsive layouts
+* Dark theme
+* Animations
+* Buttons
+* Panels
+* Mobile controls
+* Visual effects
+* UI styling
+
+### JavaScript
+
+Used for:
+
+* Snake movement
+* Game logic
+* Collision detection
+* Food generation
+* Scoring
+* Levels
+* Difficulty
+* Game modes
+* Bonus mechanics
+* Keyboard input
+* Touch input
+* Audio control
+* Pause/resume
+* Restart system
+* Game state management
+
+### HTML5 Canvas
+
+Used for real-time Snake gameplay rendering.
+
+### Web Audio API
+
+Used for gameplay audio and sound effects.
+
+### LocalStorage API
+
+Used for persistent local data such as:
+
+* High score
+* Sound preferences
+* Player settings
+
+---
+
+# 🚀 Getting Started
+
+No package manager, framework, or build system is required.
+
+## Clone the Repository
+
+```bash
+git clone https://github.com/xaadii-prog/snake-game-mr-malik.git
+```
+
+## Enter the Project
+
+```bash
+cd snake-game-mr-malik
+```
+
+## Run
+
+Open:
 
 ```text
 index.html
@@ -197,60 +372,238 @@ index.html
 
 in a modern web browser.
 
-For background music, make sure `music.mp3` is located in the same directory as `index.html`.
+For audio functionality, make sure:
+
+```text
+music.mp3
+```
+
+is located in the same directory as:
+
+```text
+index.html
+```
 
 ---
 
-## 📱 Browser Support
+# 🌐 Browser Compatibility
 
-The game is designed for modern browsers with support for:
+The game targets modern browsers with support for:
 
 * HTML5 Canvas
 * JavaScript
 * Web Audio API
 * LocalStorage
-* Touch events
+* Touch Events
 
-Desktop and mobile browsers are supported.
+The project is designed for both:
 
----
-
-## 🔄 Development Roadmap
-
-### v1.0.0 — Stable Release
-
-Current release featuring the core Snake experience, game modes, difficulty levels, scoring, levels, bonus food, audio, high scores, keyboard controls, swipe controls, and mobile D-pad controls.
-
-### v2.0.0 — Themes
-
-Planned visual theme system with multiple professional game environments and additional customization.
-
-### v3.0.0 — Optimization
-
-Planned performance and production improvements, including cleaner code, optimized assets, smoother mobile performance, and audio/touch optimization.
+* 💻 Desktop browsers
+* 📱 Mobile browsers
 
 ---
 
-## 📌 Current Version
+# 📊 Version History
 
-**v1.0.0**
+## 🚀 v3.0.0 — Optimization & Production Release
 
-The current version focuses on a complete and stable core gameplay experience.
+**Current Release**
 
-Future versions will build on the existing system without changing the basic Snake gameplay.
+V3 focuses on moving the project toward a cleaner and more optimized production structure.
+
+### Completed
+
+* Premium visual direction
+* Production cleanup
+* HTML optimization
+* CSS optimization
+* JavaScript optimization
+* Minification
+* Reduced project overhead
+* GitHub V3 release preparation
+* Production-ready repository structure
 
 ---
 
-## 👨‍💻 Author
+## v2.0.0 — Feature Expansion
+
+The second major development stage expanded the original Snake experience.
+
+### Major Features
+
+* Wall Levels
+* No Walls mode
+* Three difficulty levels
+* Progressive gameplay
+* Bonus food
+* High scores
+* Background music
+* Sound effects
+* Pause/resume
+* Restart system
+* Keyboard controls
+* Swipe controls
+* Mobile D-pad
+* Responsive interface
+
+---
+
+## v1.0.0 — Core Snake Release
+
+The initial version established the fundamental Snake gameplay system.
+
+### Core Features
+
+* Snake movement
+* Food collection
+* Score system
+* Snake growth
+* Collision detection
+* Canvas rendering
+* Basic game interface
+* Keyboard controls
+
+---
+
+# 🗺️ Roadmap
+
+The project is continuing to evolve beyond V3.
+
+## 🎨 Premium Visual Effects
+
+**Status: ⏳ Next**
+
+Further visual enhancements planned to push the interface and gameplay presentation toward a more polished arcade experience.
+
+---
+
+## 🔊 Audio 2.0
+
+**Status: ⏳ Planned**
+
+A future audio upgrade focused on a richer and more refined sound experience.
+
+Potential improvements include:
+
+* Enhanced sound effects
+* Improved audio feedback
+* More polished music integration
+* Better gameplay audio transitions
+
+---
+
+## 📱 Mobile 2.0
+
+**Status: ⏳ Planned**
+
+A dedicated mobile experience improvement phase focused on:
+
+* Better touch interaction
+* Improved D-pad experience
+* Mobile UI refinement
+* Better responsive behavior
+* More comfortable gameplay on smaller screens
+
+---
+
+## 📊 Player Statistics
+
+**Status: ⏳ Planned**
+
+A future statistics system designed to provide deeper insight into player performance.
+
+Potential statistics may include:
+
+* Games played
+* Best score
+* Levels completed
+* Food collected
+* Bonus food collected
+* Gameplay records
+
+---
+
+## 🧹 Final Polish & Testing
+
+**Status: ⏳ Planned**
+
+Final quality improvements covering:
+
+* Bug testing
+* Cross-browser testing
+* Mobile testing
+* UI refinement
+* Gameplay balancing
+* Performance checks
+* Final production cleanup
+
+---
+
+## 📦 Minification
+
+**Status: ✅ Completed**
+
+Production HTML, CSS, and JavaScript files have been minified as part of the V3 optimization process.
+
+---
+
+## 🚀 GitHub v3.0.0 Release
+
+**Status: ✅ Completed**
+
+The V3 production release has been committed and pushed to the project's GitHub repository.
+
+---
+
+# 🔮 Future Vision
+
+The long-term goal is to evolve this project from a simple Snake implementation into a polished browser-based arcade experience.
+
+Future development may explore:
+
+* 🎨 More visual themes
+* 🏆 Advanced achievements
+* 📊 Detailed player statistics
+* 🔊 Expanded audio systems
+* 📱 Improved mobile gameplay
+* 🎮 Additional game modes
+* ⚡ Further performance optimization
+* 🧩 New gameplay mechanics
+
+The core Snake experience will remain at the heart of the project.
+
+---
+
+# 📂 Repository
+
+**GitHub Repository**
+
+https://github.com/xaadii-prog/snake-game-mr-malik
+
+---
+
+# 👨‍💻 Author
 
 **Mr. Malik**
 
-GitHub: **@xaadii-prog**
+GitHub: **[@xaadii-prog](https://github.com/xaadii-prog)**
 
 ---
 
-## 📜 License
+# 📜 License
 
-This project is currently maintained as a personal project by **Mr. Malik**.
+This project is maintained as a personal project by **Mr. Malik**.
 
 © Mr. Malik — All rights reserved.
+
+---
+
+<p align="center">
+
+### 🐍 Snake Game — Mr. Malik
+
+**Built from scratch · Optimized for V3 · Designed for the arcade**
+
+⭐ If you like the project, consider giving the repository a star.
+
+</p>
